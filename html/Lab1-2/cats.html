@@ -4,28 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <title>meow</title>
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <a href="./index.html">strona główna</a>
 
     <form action="" method="get">
         <h2>Koci spam</h2>
+
         <label>Adres e-mail:</label>
-        <input type="text" />
+        <input type="text" name="email" />
         <br />
+
         <label>Więcej niż 1 na maila?</label>
-        <input type="checkbox" />
+        <input type="checkbox" name="moreThanOne" />
         <br />
+
         <label>Jak często?</label>
         <br />
-        <input type="radio" />
+        <input type="radio" name="frequency" value="daily" />
         <label>codziennie</label>
         <br />
-        <input type="radio" />
+        <input type="radio" name="frequency" value="weekly" />
+        <label>tygodniowo</label>
         <br />
-        <input type="radio" />
+        <input type="radio" name="frequency" value="monthly" />
+        <label>miesięcznie</label>
         <br />
-        <input type="button" />
+
+        <input type="submit" value="Zapisz się" />
     </form>
 </body>
 </html>

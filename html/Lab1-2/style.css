@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Inter, sans-serif;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	background-color: lightgray;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	box-shadow: 0 10px 2px #aaa;
+	padding: 20px 120px;
+	z-index: 100;
+}
+
+article, section {
+	display: block;
+	padding: 0 120px;
+	font-size: 20px;
+}
+
+section > img:last-of-type {
+	display: block;
+	padding: 50px;
+	height: 100%;
+}
