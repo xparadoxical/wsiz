@@ -9,7 +9,7 @@ function gcd(a, b) {
     }
 
     let mod = a % b;
-    if (mod > 0)
+    if (mod != 0)
         return gcd(b, mod);
     else
         return b; //previous modulo
