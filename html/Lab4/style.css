@@ -1,0 +1,14 @@
+#gcd {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+}
+
+#gcd-output {
+	margin-top: 0.5em;
+}
+
+#clock {
+	display: flex;
+	align-items: baseline;
+}

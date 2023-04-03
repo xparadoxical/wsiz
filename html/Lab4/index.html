@@ -1,18 +1,35 @@
 <html>
     <head>
         <meta charset="utf-8" />
+		<link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <h1 style="display: flex; align-items: baseline;">
-            🕒&nbsp;<pre id="clock">--:--:--</pre>
+        <h1 id="clock">
+            🕒&nbsp;<pre id="clock-time">--:--:--</pre>
         </h1>
 
-        <div width="20em">
-            <textarea></textarea>
-            <textarea></textarea>
-            <button onclick=""></button>
-            <div style="margin-left: 2em"></div>
-        </div>
+        <form id="gcd">
+			Największy wspólny dzielnik
+            <input type="number" name="a" value="0" step="1" required></input>
+            <input type="number" name="b" value="0" step="1" required></input>
+            <input type="submit" value="Oblicz"></input>
+            <p id="gcd-output"></p>
+        </form>
+
+		<div id="calculator">
+			Kalkulator<br/>
+			<input type="number" id="a" required></input>
+			<select id="operation">
+				<option value="addition">+</option>
+				<option value="subtraction">-</option>
+				<option value="multiplication">*</option>
+				<option value="division">/</option>
+				<option value="power">^ (do potęgi)</option>
+			</select>
+			<input type="number" id="b" required></input>
+            <button type="button" id="calculate">=</button>
+            <input type="number" id="result"></input>
+		</div>
 
         <script src="script.js"></script>
     </body>
