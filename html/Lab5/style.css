@@ -1,4 +1,9 @@
-td, th {
+body > div {
+    margin-top: 3em;
+}
+
+#multiplication-table td,
+#multiplication-table th {
     width: 2.5em;
     height: 2.5em;
     text-align: center;
@@ -8,4 +13,19 @@ td, th {
 table {
     border-spacing: 0;
     border-collapse: collapse;
+}
+
+#info-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}
+
+#info-grid > .header-cell {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+#info-grid > * {
+    text-align: center;
+    padding: 0 0.5em;
 }

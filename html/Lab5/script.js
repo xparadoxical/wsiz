@@ -22,19 +22,33 @@ for (let row = 1; row <= 10; row++) {
 
 
 //zad 2
-let genForm = document.getElementById("")
+let infoGrid = document.getElementById("info-grid");
 
 let personalInfo = [];
 let names = ["Andrzej", "Barbara", "Celina", "Damian", "Ewelina", "Filip", "Grzegorz", "Henryk", "Izabela", "Joanna", "Krzysztof", "Lidia", "Małgorzata", "Norbert", "Olga", "Przemysław", "Robert", "Szymon", "Tomasz", "Łukasz"];
 let surnames = ["Nowak", "Wójcik", "Kowalczyk", "Woźniak", "Mazur", "Stępień", "Pawlak", "Walczak", "Lis", "Duda", "Bąk", "Kaźmierczak", "Krupa", "Mróz", "Sobczak"];
 
-for (let i = 0; i < 20; i++) {
-    let p = {
-        "name": names[Math.floor(Math.random() * names.length)], //[0, len)
-        "surname": surnames[Math.floor(Math.random() * surnames.length)], //[0, len)
-        "age": Math.floor(Math.random() * (80 - 18 + 1) + 18), //[0, 1) * 63 -> [0, 63) + 18 -> [18, 81)
-        "phone": Math.floor(Math.random() * (8_000_000 - 5_000_000 + 1) + 5_000_000) //[0, 1) * 3_000_001 -> [0, 3_000_001) + 5mln -> [5mln, 8_000_001)
-    };
-    personalInfo.push(p);
-    console.log(p);
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
 }
+
+document.getElementById("info-gen").addEventListener("submit", (event) => {
+    event.preventDefault(); //don't send an http request with input values
+
+    infoGrid.querySelectorAll(":not(.header-cell)").forEach((element) => infoGrid.removeChild(element));
+    personalInfo = [];
+
+    let count = event.srcElement.elements["count"].valueAsNumber;
+    for (let i = 0; i < count; i++) {
+        let p = {
+            "name": names[randomInt(0, names.length)],
+            "surname": surnames[randomInt(0, surnames.length)],
+            "age": randomInt(18, 80 + 1),
+            "phone": randomInt(5_000_000, 8_000_000 + 1)
+        };
+
+        personalInfo.push(p);
+        console.log(p);
+        infoGrid.innerHTML += `<div>${p.name} ${p.surname}</div><div>${p.age}</div><div>${p.phone}</div>`;
+    }
+});

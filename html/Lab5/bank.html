@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Bank</title>
+        <style>
+            .error {
+                color: red; font-weight: bold; font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="bank.js"></script>
+
+        <h2>Zarządzanie kontem</h2>
+
+        <h3>Twoje dane</h3>
+        <p>Numer konta: <span id="account">a</span></p>
+        <p>Imię i nazwisko: <span id="full-name">b</span></p>
+        <p>Stan konta: <span id="balance">123</span> zł</p>
+
+        <h3>Bankomat</h3>
+        <form id="atm">
+            <label for="amount">Ilość:</label>
+            <input name="amount" type="number" min="0.01" step="0.01" size="3" required /> zł
+            <span id="insufficient-balance" class="error" style="display: none">Nie posiadasz wystarczających środków</span>
+            <br>
+
+            <label for="pin">PIN:</label>
+            <input name="pin" type="password" minlength="4" maxlength="4" pattern="\d+" size="4" required />
+            <span id="incorrect-pin" class="error" style="display: none">Nieprawidłowy PIN</span>
+            <br>
+
+            <button name="cash-in">Wpłać</button>
+            <button name="cash-out">Wypłać</button>
+        </form>
+    </body>
+</html>

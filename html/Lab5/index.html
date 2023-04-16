@@ -1,26 +1,68 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <table id="multiplication-table">
             <caption>
-                <h3>Tabliczka mnożenia 10x10</h3>
+                <h2>Tabliczka mnożenia 10x10</h2>
             </caption>
             <thead></thead>
             <tbody></tbody>
         </table>
 
-        <div style="margin-top: 2em">
-            <h3>Generator danych</h3>
+        <div>
+            <h2>Generator danych</h2>
             <form id="info-gen">
                 <label for="count">Ilość rekordów:</label>
-                <input type="number" name="count" min="1" step="1" value="1" required />
-                <input type="submit" id="generate" value="Wygeneruj" />
+                <input type="number" name="count" min="1" max="20" step="1" value="1" required />
+                <input type="submit" value="Wygeneruj" />
+            </form>
+
+            <div id="info-grid">
+                <div class="header-cell">Imię i nazwisko</div>
+                <div class="header-cell">Wiek</div>
+                <div class="header-cell">Numer telefonu</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Bank</h2>
+            <h3>Zaloguj się</h3>
+            <form action="bank.html" method="get" target="_blank">
+                <input name="action" type="hidden" value="login" />
+                
+                <label for="account">Numer konta:</label>
+                <input name="account" type="number" min="0" step="1" required />
+                <br>
+
+                <label for="pin">PIN:</label>
+                <input name="pin" type="password" minlength="4" maxlength="4" pattern="\d+" size="4" required />
+                <br>
+
+                <input type="submit" value="Zaloguj" />
+            </form>
+            <h3>Zarejestruj się</h3>
+            <form action="bank.html" method="get" target="_blank">
+                <input name="action" type="hidden" value="register" />
+
+                <label for="name">Imię:</label>
+                <input name="name" type="text" minlength="1" pattern="[^\s\d]+" required />
+                <br>
+
+                <label for="surname">Nazwisko:</label>
+                <input name="surname" type="text" minlength="1" pattern="[^\s\d]+" required />
+                <br>
+
+                <label for="pin">Czterocyfrowy PIN:</label>
+                <input name="pin" type="text" minlength="4" maxlength="4" pattern="\d+" size="4" required />
+                <br>
+
+                <input type="submit" value="Zarejestruj" />
             </form>
         </div>
 
-        <script src="./script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
