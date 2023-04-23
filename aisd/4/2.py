@@ -1,40 +1,38 @@
 def merge(l: int, m: int, r: int, A: list[int], B: list[int]):
     """
-    :param l: left index of the first sorted sublist in A; the end index is m-1
-    :param m: left index of the second sorted sublist in A
-    :param r: right index of the second sorted sublist in A
-    :param A: input
-    :param B: output list of the size of A
-    :return:
+    :param l: (left) first index of the first sorted sublist in A; the last index is m-1
+    :param m: (middle) first index of the second sorted sublist in A
+    :param r: (right) last index of the second sorted sublist in A
+    :param A: input list where l:m and m:(r+1) are two sorted sublists
+    :param B: output - the two sublists merged and sorted
     """
 
     i = k = l
     j = m
 
-    left_last = m - 1
-    right_last = r
+    while i < m or j <= r:
 
-    while True:
-        a = A[i]
-        b = A[j]
+        if i < m and j <= r:
+            a = A[i]
+            b = A[j]
 
-        if i < left_last and j < right_last:
-            if a >= b:
+            if a <= b:
                 B.append(a)
                 i += 1
-            if a <= b:
+            if b <= a:
                 B.append(b)
                 j += 1
 
-        elif i < left_last:
-            B += A[i:left_last + 1]
-            i = left_last
-        elif j < right_last:
-            B += A[j:right_last + 1]
-            j = right_last
-        else:
-            break
+        elif i < m:
+            B += A[i:m]
+            i = m
+        elif j <= r:
+            B += A[j:r + 1]
+            j = r + 1
 
+
+# dwie połowy tablicy - [0..4], [5..9] - powinny być posortowane rosnąco
+A = [1,35,42,65,68,25,55,59,70,79]
 B = []
-merge(0, 5, 9, [1,35,42,65,68,25,55,59,70,79], B)
+merge(0, 5, 9, A, B)
 print(B)
