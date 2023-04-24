@@ -1,4 +1,4 @@
-def list_range(l: list[int]) -> int:
+def range_of_list(l: list[int]) -> int:
     n = len(l)
 
     min = l[0]
@@ -13,6 +13,6 @@ def list_range(l: list[int]) -> int:
     return max - min
 
 
-print(list_range([5, 9, -7, 3]))
-print(list_range([3]))
-print(list_range([-2, 5, 6, 24, -4]))
+print(range_of_list([5, 9, -7, 3]))
+print(range_of_list([3]))
+print(range_of_list([-2, 5, 6, 24, -4]))
