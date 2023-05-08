@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <form>
+            <label for="name">Imię:</label>
+            <input name="name" type="text" minlength="1" required/>
+            <br>
+
+            <label for="surname">Nazwisko:</label>
+            <input name="surname" type="text" minlength="1" required/>
+            <br>
+
+            <label for="email">Adres e-mail:</label>
+            <input name="email" type="text" pattern="[a-z0-9_+\.]+@[a-z0-9_+\.]+\.(com|pl)" required/>
+            <br>
+
+            <label for="password">Hasło:</label>
+            <input name="password" type="password" minlength="8" required/>
+            <br>
+
+            <label for="sex">Płeć:</label>
+            <select name="sex">
+                <option value="male">Mężczyzna</option>
+                <option value="female">Kobieta</option>
+            </select>
+            <br>
+
+            <label for="phone">Numer telefonu:</label>
+            <input name="phone" type="number" min="100000000" max="999999999" required/>
+            <br>
+
+            <label for="birth">Data urodzenia:</label>
+            <input name="birth" type="date" required/>
+            <br>
+
+            <label for="country">Kraj:</label>
+            <select name="country">
+                <option value="poland">Polska</option>
+                <option value="england">Anglia</option>
+                <option value="ukraine">Ukraina</option>
+                <option value="germany">Niemcy</option>
+                <option value="france">Francja</option>
+                <option value="hungary">Węgry</option>
+                <option value="czech">Czechy</option>
+                <option value="slovakia">Słowacja</option>
+                <option value="lithuania">Litwa</option>
+                <option value="austria">Austria</option>
+            </select>
+            <br>
+
+            <button>Zapisz</button>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>
