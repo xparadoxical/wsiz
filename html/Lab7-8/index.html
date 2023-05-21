@@ -4,53 +4,94 @@
 		<link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <form>
+        <form novalidate="true"> <!-- novalidate turns off validation popups -->
             <label for="name">Imię:</label>
-            <input name="name" type="text" minlength="1" required/>
-            <br>
+            <input name="name" type="text" /> <!-- minlength="1" required/> -->
+            <div></div>
 
             <label for="surname">Nazwisko:</label>
-            <input name="surname" type="text" minlength="1" required/>
-            <br>
+            <input name="surname" type="text" /> <!-- minlength="1" required/> -->
+            <div></div>
 
             <label for="email">Adres e-mail:</label>
-            <input name="email" type="text" pattern="[a-z0-9_+\.]+@[a-z0-9_+\.]+\.(com|pl)" required/>
-            <br>
+            <input name="email" type="text" /> <!-- pattern="[a-z0-9_+\.]+@[a-z0-9_+\.]+\.(com|pl)" required/> -->
+            <div></div>
 
             <label for="password">Hasło:</label>
-            <input name="password" type="password" minlength="8" required/>
-            <br>
+            <input name="password" type="password" /> <!-- minlength="8" required/> -->
+            <div></div>
+            
+            <label for="repeat-password">Powtórz hasło:</label>
+            <input name="repeat-password" type="password" /> <!-- minlength="8" required/>  -->
+            <div></div>
 
             <label for="sex">Płeć:</label>
             <select name="sex">
+                <option value="placeholder">(wybierz)</option>
                 <option value="male">Mężczyzna</option>
                 <option value="female">Kobieta</option>
             </select>
-            <br>
+            <div></div>
 
             <label for="phone">Numer telefonu:</label>
-            <input name="phone" type="number" min="100000000" max="999999999" required/>
-            <br>
+            <input name="phone" type="text" /> <!-- min="100000000" max="999999999" required/> -->
+            <div></div>
 
             <label for="birth">Data urodzenia:</label>
-            <input name="birth" type="date" required/>
-            <br>
+            <input name="birth" type="date" /> <!-- required/> -->
+            <div></div>
 
             <label for="country">Kraj:</label>
             <select name="country">
-                <option value="poland">Polska</option>
-                <option value="england">Anglia</option>
-                <option value="ukraine">Ukraina</option>
-                <option value="germany">Niemcy</option>
-                <option value="france">Francja</option>
-                <option value="hungary">Węgry</option>
-                <option value="czech">Czechy</option>
-                <option value="slovakia">Słowacja</option>
-                <option value="lithuania">Litwa</option>
-                <option value="austria">Austria</option>
+                <option value="placeholder">(wybierz)</option>
+                <option value="pl">Polska</option>
+                <option value="en">Anglia</option>
+                <option value="ua">Ukraina</option>
+                <option value="de">Niemcy</option>
+                <option value="fr">Francja</option>
+                <option value="hu">Węgry</option>
+                <option value="cz">Czechy</option>
+                <option value="sk">Słowacja</option>
+                <option value="lt">Litwa</option>
+                <option value="at">Austria</option>
             </select>
+            <div></div>
+            
+            <label for="voivodeship">Województwo:</label>
+            <input name="voivodeship-text" type="text" disabled/>
+            <div></div>
+            <select name="voivodeship-select" disabled hidden>
+                <option value="placeholder">(wybierz)</option>
+                <option value="DS">dolnośląskie</option>
+                <option value="KP">kujawsko-pomorskie</option>
+                <option value="LU">lubelskie</option>
+                <option value="LB">lubuskie</option>
+                <option value="LD">łódzkie</option>
+                <option value="MA">małopolskie</option>
+                <option value="MZ">mazowieckie</option>
+                <option value="OP">opolskie</option>
+                <option value="PK">podkarpackie</option>
+                <option value="PD">podlaskie</option>
+                <option value="PM">pomorskie</option>
+                <option value="SL">śląskie</option>
+                <option value="SK">świętokrzyskie</option>
+                <option value="WN">warmińsko-mazurskie</option>
+                <option value="WP">wielkopolskie</option>
+                <option value="ZP">zachodniopomorskie</option>
+            </select>
+
+            <label for="address">Adres zamieszkania:</label>
+            <input name="address" type="text" disabled/>
+            <div></div>
+
+            <input name="contact-address-same" type="checkbox" checked />
+            <label for="contact-address-same">Adres korespondencyjny jest taki sam</label>
             <br>
 
+            <label for="contact-address" hidden>Adres korespondencyjny:</label>
+            <input name="contact-address" type="text" disabled hidden/>
+            <div></div>
+            
             <button>Zapisz</button>
         </form>
 

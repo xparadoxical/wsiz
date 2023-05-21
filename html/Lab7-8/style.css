@@ -1,0 +1,29 @@
+body {
+    background: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+form {
+    border: solid 6px steelblue;
+    border-radius: 15px;
+    padding: 1em;
+    width: fit-content;
+}
+
+input+div, select+div {
+    width: fit-content;
+    font-weight: bold;
+    color: lightcoral;
+    text-shadow: 0 0 2px black;
+}
+
+input, select, button {
+    margin-top: 0.6em;
+}
+
