@@ -26,5 +26,7 @@ def parse_rpn(s: str) -> int:
         elif c == "^":
             stack.push(a ** b)
 
+    raise ArithmeticError("Input must end with =")
+
 
 print(parse_rpn("73+52-2^*="))
