@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <form>
+            <label for="name">Imię: </label>
+            <input name="name" type="text" minlength="1" required />
+            <br>
+
+            <label for="surname">Nazwisko: </label>
+            <input name="surname" type="text" minlength="1" required />
+            <br>
+
+            <label for="pesel">PESEL: </label>
+            <input name="pesel" type="number" min="1" max="99999999999" required />
+            <br>
+
+            <label for="phone">Numer telefonu: </label>
+            <input name="phone" type="number" min="1" max="999999999" required />
+            <br>
+
+            <label for="birth">Data urodzenia: </label>
+            <input name="birth" type="date" required />
+            <br>
+
+            <button>Wyślij</button>
+        </form>
+
+        <script>
+            class Osoba {
+                constructor(imie, nazwisko, pesel, numer_telefonu, data_urodzenia) {
+                    this.imie = imie;
+                    this.nazwisko = nazwisko;
+                    this.pesel = pesel;
+                    this.numer_telefonu = numer_telefonu;
+                    this.data_urodzenia = data_urodzenia;
+                    this.id = Osoba.getId();
+                }
+
+                static getId() {
+                    //(0,1] * (123 + 5) = (0,128] - 5 = (-5,123]
+                    return Math.ceil(Math.random() * (123 + 5) - 5);
+                }
+
+                isAdult() {
+                    let eighteenYearsAgo = new Date();
+                    eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
+                    return this.data_urodzenia <= eighteenYearsAgo;
+                }
+
+                logInfo() {
+                    console.log("Imię", this.imie, "\n",
+                                "Nazwisko", this.nazwisko, "\n",
+                                "PESEL", this.pesel, "\n",
+                                "Numer telefonu", this.numer_telefonu, "\n",
+                                "Data urodzenia", this.data_urodzenia, "\n",
+                                "ID", this.id);
+                }
+            }
+
+            //TODO 1.b form handling
+        </script>
+    </body>
+</html>
