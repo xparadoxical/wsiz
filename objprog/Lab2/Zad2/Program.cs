@@ -2,9 +2,9 @@
 
 namespace Zad2
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Sumator s = new Sumator(2, 5, -1, 0, 1);
             Console.WriteLine($"Suma: {s.Suma()}");
