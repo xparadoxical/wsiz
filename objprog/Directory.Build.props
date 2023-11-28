@@ -1,6 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
-    <ImplicitUsings>disable</ImplicitUsings>
-  </PropertyGroup>
-</Project>
