@@ -21,7 +21,7 @@ internal class Program
     }
 #else
     {
-        var p = parking = new Parking(5, 6);
+        var p = parking = new Parking.Parking(5, 6);
         p.AddSlot(VehicleTraits.Family, 1);
         p.AddSlot(VehicleTraits.Disabilities, 1);
         p.AddSlot(VehicleTraits.KissAndRide, 1);
