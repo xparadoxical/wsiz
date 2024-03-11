@@ -1,4 +1,4 @@
-﻿namespace Proj;
+﻿namespace Parking;
 
 public class Motorcycle(string id, VehicleTraits traits) : Vehicle(id, Width, Height, traits), IVehicleSize
 {

@@ -2,7 +2,7 @@
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace Proj;
+namespace Parking;
 internal static partial class Cli
 {
     public static void WaitForKey(ConsoleKey key)
@@ -174,7 +174,7 @@ internal static partial class Cli
 
     public static (int x, int y) ReadParkingPosition(string promptSubject = "Identyfikator miejsca")
     {
-        var start = Prompt($"{promptSubject} (np. B4)",
+        _ = Prompt($"{promptSubject} (np. B4)",
             out var matches,
             "^ *(?<column>[A-Za-z]+) *(?<row>[0-9]+) *$");
         return Parking.NotationToCoords(matches![0].Groups["column"].Value, matches[0].Groups["row"].Value);

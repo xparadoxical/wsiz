@@ -1,8 +1,8 @@
-﻿using Proj;
+﻿using Parking;
 
 internal class Program
 {
-    internal static Parking parking;
+    internal static Parking.Parking parking;
 
     [STAThread]
     private static void Main(string[] args)

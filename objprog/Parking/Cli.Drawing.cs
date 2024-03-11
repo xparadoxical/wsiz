@@ -2,7 +2,7 @@
 
 using static System.ConsoleColor;
 
-namespace Proj;
+namespace Parking;
 internal static partial class Cli
 {
     public static ConsoleColor BackColorForSlot(Slot slot)

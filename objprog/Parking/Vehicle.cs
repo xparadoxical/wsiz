@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace Proj;
+namespace Parking;
 public abstract class Vehicle
 {
     protected Vehicle(string id, int width, int height, VehicleTraits traits)

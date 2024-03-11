@@ -1,8 +1,8 @@
 ﻿using System.Text;
 
-using Proj.Serialization;
+using Parking.Serialization;
 
-namespace Proj;
+namespace Parking;
 internal static partial class Cli
 {
     public static void MainLoop()
@@ -237,17 +237,6 @@ internal static partial class Cli
                             continue;
 
                         DataManager.SerializeToXmlFile(ParkingDto.FromParking(Program.parking), dialog.FileName);
-                        //try
-                        //{
-
-                        //    File.Delete(dialog.FileName);
-                        //    using var fs = dialog.OpenFile();
-                        //    DataManager.SerializeXml(ParkingDto.FromParking(Program.parking), fs);
-                        //}
-                        //catch (Exception e)
-                        //{
-                        //    Pause($"Nie można zapisać danych do pliku {dialog.FileName}:\n{e}");
-                        //}
                         Pause("Zapisano.");
                     }
 

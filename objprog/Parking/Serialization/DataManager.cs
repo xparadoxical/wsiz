@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Proj.Serialization;
+namespace Parking.Serialization;
 internal static class DataManager
 {
     private static readonly XmlSerializerNamespaces _emptyNamespaces = new([XmlQualifiedName.Empty]);
@@ -11,10 +11,6 @@ internal static class DataManager
         OmitXmlDeclaration = true,
         Encoding = new UTF8Encoding(false),
         Indent = true
-    };
-    private static readonly XmlReaderSettings _rSettings = new()
-    {
-
     };
 
     internal static void SerializeXml(ParkingDto p, Stream destination)
@@ -34,7 +30,7 @@ internal static class DataManager
 
     internal static ParkingDto DeserializeXml(Stream source)
     {
-        using var writer = XmlReader.Create(source, _rSettings);
+        using var writer = XmlReader.Create(source);
         var serializer = new XmlSerializer(typeof(ParkingDto));
         return (ParkingDto)serializer.Deserialize(writer)!;
     }

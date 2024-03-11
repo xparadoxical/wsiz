@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Proj;
+namespace Parking;
 
 [DebuggerDisplay("Type={Type} IsOccupied={IsOccupied}")]
 public sealed class Slot(VehicleTraits type, Vehicle? vehicle = null)

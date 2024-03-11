@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Proj.Serialization;
+namespace Parking.Serialization;
 
 [Serializable, XmlType("Parking")]
 public sealed class ParkingDto(int width, int height, int maxVehicleHeight)

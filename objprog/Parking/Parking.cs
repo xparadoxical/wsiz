@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace Proj;
+namespace Parking;
 
 public sealed class Parking
 {
@@ -214,6 +214,4 @@ public sealed class Parking
         chars.Reverse();
         return string.Concat(chars) + (y + 1);
     }
-
-
 }

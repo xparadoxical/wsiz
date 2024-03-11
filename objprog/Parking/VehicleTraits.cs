@@ -1,9 +1,6 @@
-﻿namespace Proj;
-
-using System.Diagnostics;
+﻿namespace Parking;
 
 using static VehicleTraits;
-
 [Flags]
 public enum VehicleTraits
 {
